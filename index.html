@@ -7,37 +7,42 @@
 
 <style>
 
+/* 全体レイアウト */
 body {
   margin: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background: linear-gradient(to bottom, #f8f2e8, #eadfcb);
   font-family: sans-serif;
   color: #4a3422;
-  text-align: center;
 }
 
+/* メインエリア中央寄せ */
 .container {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
   padding: 20px;
-  flex: 1;
+  text-align: center;
 }
 
+/* タイトル */
 h1 {
   font-size: 42px;
   margin-bottom: 10px;
 }
 
+/* サブタイトル */
 .subtitle {
   font-size: 20px;
   margin-bottom: 20px;
 }
 
+/* ボタン */
 button {
   background: #c98c3a;
   color: white;
@@ -54,7 +59,7 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* 説明ボックス（タイトルだけ表示） */
+/* 説明ボックス */
 .note {
   margin-top: 15px;
   background: #ffffff;
@@ -67,6 +72,7 @@ button:hover {
   max-width: 320px;
 }
 
+/* カード */
 .card {
   margin-top: 20px;
   background: rgba(255,255,255,0.9);
@@ -83,17 +89,20 @@ button:hover {
   margin-bottom: 20px;
 }
 
+/* 名前 */
 .food-name {
   font-size: 26px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
+/* テキスト */
 .flavor {
   line-height: 1.8;
   margin-bottom: 15px;
 }
 
+/* リンクボタン */
 a {
   display: inline-block;
   text-decoration: none;
@@ -103,15 +112,16 @@ a {
   border-radius: 999px;
 }
 
+/* 非表示系 */
 #againBtn, #backBtn {
   display: none;
 }
 
-/* クレジット（常時フッター） */
+/* クレジット（フッター風） */
 .credit {
-  font-size: 12px;
-  opacity: 0.6;
   text-align: center;
+  font-size: 12px;
+  opacity: 0.7;
   padding: 20px 0;
 }
 
@@ -121,7 +131,7 @@ a {
 }
 
 .credit a:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 </style>
@@ -141,16 +151,17 @@ a {
     1回注文する
   </button>
 
-  <!-- タイトル画面だけ表示 -->
+  <!-- タイトル説明 -->
   <div class="note">
     食い意地から生まれたサイトです<br>
     あまり難しく考えず、気軽に<br>
     ポチポチしてください✌️<br><br>
-    ⚠️今現在排出されるのは美味しい<br>
+    ※現在排出されるのは美味しい<br>
     料理のみで、オリジナル料理は提供<br>
     されません！
   </div>
 
+  <!-- カード -->
   <div class="card" id="card">
 
     <img id="foodImage" src="" referrerpolicy="no-referrer">
@@ -175,7 +186,7 @@ a {
 
 </div>
 
-<!-- クレジット（常に下） -->
+<!-- クレジット（常時下） -->
 <div class="credit">
   製作者：春もち【観葉植物】<br>
   Twitter：
