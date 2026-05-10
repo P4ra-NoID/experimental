@@ -11,8 +11,8 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   background: linear-gradient(to bottom, #f8f2e8, #eadfcb);
   font-family: sans-serif;
   color: #4a3422;
@@ -25,6 +25,7 @@ body {
   align-items: center;
   width: 100%;
   padding: 20px;
+  flex: 1;
 }
 
 h1 {
@@ -53,7 +54,7 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* 説明ボックス */
+/* 説明ボックス（タイトルだけ表示） */
 .note {
   margin-top: 15px;
   background: #ffffff;
@@ -106,6 +107,23 @@ a {
   display: none;
 }
 
+/* クレジット（常時フッター） */
+.credit {
+  font-size: 12px;
+  opacity: 0.6;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.credit a {
+  color: #BB88EE;
+  text-decoration: none;
+}
+
+.credit a:hover {
+  opacity: 0.8;
+}
+
 </style>
 </head>
 
@@ -123,7 +141,7 @@ a {
     1回注文する
   </button>
 
-  <!-- 説明ボックス -->
+  <!-- タイトル画面だけ表示 -->
   <div class="note">
     食い意地から生まれたサイトです<br>
     あまり難しく考えず、気軽に<br>
@@ -156,6 +174,15 @@ a {
     タイトルにもどる
   </button>
 
+</div>
+
+<!-- クレジット（常に下） -->
+<div class="credit">
+  製作者：あなたの名前<br>
+  Twitter：
+  <a href="https://twitter.com/ech_oni3" target="_blank">
+    @ech_oni3
+  </a>
 </div>
 
 <script>
@@ -191,6 +218,8 @@ function drawFood() {
   document.getElementById("drawBtn").style.display = "none";
   document.getElementById("againBtn").style.display = "inline-block";
   document.getElementById("backBtn").style.display = "inline-block";
+
+  document.querySelector(".note").style.display = "none";
 }
 
 function backToTitle() {
@@ -199,6 +228,8 @@ function backToTitle() {
   document.getElementById("drawBtn").style.display = "inline-block";
   document.getElementById("againBtn").style.display = "none";
   document.getElementById("backBtn").style.display = "none";
+
+  document.querySelector(".note").style.display = "block";
 }
 
 </script>
