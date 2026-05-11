@@ -166,7 +166,8 @@ a {
 
   <div class="note">
 食い意地から生まれた暇つぶし個人的サイトです！
-初心者なのでUIが終わっています。許して  
+初心者なのでUIが終わっています。許して
+音出ます。オフにもできます。
 あまり難しく考えず、気軽にポチポチしてください✌️
 ※現在排出されるのは美味しい料理のみで、
 オリジナル料理は提供されません。
@@ -304,7 +305,9 @@ const foods = [
 function drawFood() {
 
   if (soundEnabled) {
-    document.getElementById("sound32").play().catch(() => {});
+    const sfx = document.getElementById("sound32").cloneNode();
+
+sfx.play().catch(() => {});
   }
 
   let index;
@@ -333,7 +336,9 @@ function drawFood() {
 function backToTitle() {
 
   if (soundEnabled) {
-    document.getElementById("sound48").play().catch(() => {});
+    const sfx = document.getElementById("sound48").cloneNode();
+
+sfx.play().catch(() => {});
   }
 
   document.getElementById("card").style.display = "none";
