@@ -316,10 +316,6 @@ const foods = [
 ];
 
 function drawFood() {
-  
-  if (soundEnabled && titleBgm.paused) {
-    titleBgm.play().catch(() => {});
-  }
 
   if (soundEnabled) {
     const sfx = document.getElementById("sound32").cloneNode();
@@ -350,13 +346,19 @@ sfx.play().catch(() => {});
   document.querySelector(".note").style.display = "none";
 }
 
-function backToTitle() {
+function toggleSound() {
+
+  soundEnabled = !soundEnabled;
+
+  document.getElementById("soundToggle").textContent =
+    soundEnabled ? "🔉" : "🔇";
 
   if (soundEnabled) {
-    const sfx = document.getElementById("sound48").cloneNode();
-
-sfx.play().catch(() => {});
+    titleBgm.play().catch(() => {});
+  } else {
+    titleBgm.pause();
   }
+}
 
   document.getElementById("card").style.display = "none";
   document.getElementById("drawBtn").style.display = "inline-block";
