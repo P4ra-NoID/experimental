@@ -304,8 +304,7 @@ const foods = [
 function drawFood() {
 
   if (soundEnabled) {
-    document.getElementById("click32").currentTime = 0;
-    document.getElementById("click32").play();
+    document.getElementById("sound32").play().catch(() => {});
   }
 
   let index;
@@ -334,8 +333,7 @@ function drawFood() {
 function backToTitle() {
 
   if (soundEnabled) {
-    document.getElementById("click48").currentTime = 0;
-    document.getElementById("click48").play();
+    document.getElementById("sound48").play().catch(() => {});
   }
 
   document.getElementById("card").style.display = "none";
